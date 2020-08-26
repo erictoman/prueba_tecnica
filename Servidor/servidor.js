@@ -1,16 +1,20 @@
 //Librerias
 const express = require("express");
-const http = require("http");
+var bodyParser = require("body-parser");
 
 //Express
 const app = express();
-require("./rutas.js")(app);
-//Express sobre http
-const server = http.createServer(app);
+//Auxiliar parametros
+app.use(bodyParser.urlencoded({ extended: true }));
+app.use(bodyParser.json());
+
+//Rutas
+app.use(require("./rutas"));
+
 //Puerto ya sea por el entorno o definido por mi.
-const PORT = process.env.PORT || 1330;
+const port = process.env.PORT || 1330;
 
 //Lanzar servidor
-server.listen(PORT, () => {
-  console.log(`Servidor en ${PORT}`);
+app.listen(port, () => {
+  console.log("Servidor en el puerto: " + port);
 });
