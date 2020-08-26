@@ -1,3 +1,10 @@
+<<<<<<< 3c98dfe47a6b3bc06c5260975c3944ce2b8c385f
 Aplicacion/.expo-shared
 Aplicacion/node_modules
 Servidor/node_modules
+=======
+Aplicacion/prueba_tecnica/.expo-shared/*
+Aplicacion/prueba_tecnica/node_modules/*
+Servidor/node_modules/*
+node_modules/*
+>>>>>>> Servidor listo, falta app.
