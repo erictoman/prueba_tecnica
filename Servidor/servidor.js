@@ -1,8 +1,10 @@
 //Librerias
 const express = require("express");
 const http = require("http");
+
 //Express
 const app = express();
+require("./rutas.js")(app);
 //Express sobre http
 const server = http.createServer(app);
 //Puerto ya sea por el entorno o definido por mi.
