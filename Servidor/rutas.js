@@ -29,7 +29,7 @@ var SchemaRegistro = new mongoose.Schema({
 const Registro = mongoose.model("Registro", SchemaRegistro);
 
 //Coneccion a mongodb
-var uri = "mongodb://127.0.0.1:27017/?gssapiServiceName=mongodb";
+var uri = "mongodb://189.132.190.6:27017/?gssapiServiceName=mongodb";
 mongoose.connect(uri, { useNewUrlParser: true, useUnifiedTopology: true }).then(
   () => {
     console.log("Conectado a mongodb");
