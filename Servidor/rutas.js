@@ -94,7 +94,7 @@ router.post("/api/signup", (req, res) => {
   }
 });
 
-router.post("/api/altaregistro", (req, res) => {
+router.post("/api/altaregistro", auth.jwtAuthProtected, (req, res) => {
   var c1 = req.body.c1;
   var c2 = req.body.c2;
   var c3 = req.body.c3;
@@ -117,7 +117,7 @@ router.post("/api/altaregistro", (req, res) => {
 
 router.get("/api/ultimoregistro", auth.jwtAuthProtected, (req, res) => {
   if (req.body.usuario == "eric") {
-    Registro.findOne({}, null, { sort: { fecha: -1 } }, function (
+    Registro.findOne({}, null, { sort: { created_at: -1 } }, function (
       err,
       registros
     ) {
